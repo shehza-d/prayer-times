@@ -19,40 +19,23 @@ let myFunction = () => {
 
 
 
+// http://api.aladhan.com/v1/calendarByAddress?address=Sultanahmet%20Mosque,%20Istanbul,%20Turkey&method=2&month=04&year=2017
 
-    let cityy = document.querySelector("#city").value;
-    axios.get(`https://api.weatherapi.com/v1/current.json?key=25175e31b7074cfc895204529222906&q=${cityy}`)
+    // let cityy = document.querySelector("#city").value;
+    axios.get(`https://api.aladhan.com/v1/timings/1398332113?latitude=51.508515&longitude=-0.1254872&method=1`)
         .then(function (response) {
             // handle success
             const data = response.data;
 
             console.log(data);
 
-            let icon = data.current.condition.icon;
-            icon.replace("/file// ");
-            // console.log(icon);
-            document.querySelector("#weather_icon").src = icon;
+           
 
 
 
 
-            document.querySelector("#tempC").innerText = data.current.temp_c + "°C";
-            document.querySelector("#tempF").innerText = "Fahrenheit : " + data.current.temp_f + "°F";
-
-
-            document.querySelector("#city_name").innerText = data.location.name + ", " + data.location.region + ", " + data.location.country;
-            document.querySelector("#weather_condition").innerText = data.current.condition.text;
-
-            document.querySelector("#feels_like").innerText = "Feels Like: " + data.current.feelslike_c + "°C";
-            document.querySelector("#wind_speed").innerText = "Wind Speed: " + data.current.wind_kph + "KP/H";
-            document.querySelector("#humidity").innerText = "Humidity: " + data.current.humidity + "%";
-
-
-            document.querySelector("#visibility").innerText = "Visibility : " + data.current.vis_km + "KM";
-            document.querySelector("#weather_condition").innerText = data.current.condition.text;
-            document.querySelector("#weather_condition").innerText = data.current.condition.text;
-            document.querySelector("#weather_condition").innerText = data.current.condition.text;
-
+            // document.querySelector("#tempC").innerText = data.current.temp_c + "°C";
+           
 
 
 
