@@ -1,5 +1,25 @@
 let myFunction = () => {
 
+// getting user location
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     let cityy = document.querySelector("#city").value;
     axios.get(`https://api.weatherapi.com/v1/current.json?key=25175e31b7074cfc895204529222906&q=${cityy}`)
         .then(function (response) {
