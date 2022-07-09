@@ -38,28 +38,38 @@ function showError(error) {
 let myFunction = () => {
     // console.log("auto_function running");
     if (latitude == undefined) {
-        alert("manual function running");
-        let city = document.getElementById("city").value;
-        document.querySelector("#city_name").innerText = city;
-        axios.get(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=""&method=1`)
-            .then(function (response) {
-                // handle success
-                const data = response.data;
-                console.log(data);
+        console.log("manual function running");
 
-                // document.querySelector("#date").innerText = data.data.date.gregorian.date;
-
-                document.querySelector("#day").innerText = data.data.date.gregorian.weekday.en;
-                // document.querySelector("#date").innerHTML = data.data.date.hijri.date;
-                // document.querySelector("#date").innerHTML = data.data.date.hijri.day;
+        //showing input form
+        let input_form = document.querySelector("#city_input");
+        if (input_form.style.display == "none") {
+            input_form.style.display = "block";
+            console.log("showing hidden form");
+        }
 
 
-                document.querySelector("#namaz1").innerText = `Fajr : ${data.data.timings.Fajr}`
-                document.querySelector("#namaz2").innerText = `Dhuhr : ${data.data.timings.Dhuhr}`;
-                document.querySelector("#namaz3").innerText = `Asr : ${data.data.timings.Asr}`;
-                document.querySelector("#namaz4").innerText = `Maghrib : ${data.data.timings.Maghrib}`;
-                document.querySelector("#namaz5").innerText = `Isha : ${data.data.timings.Isha}`;
-            })
+        let city = document.getElementById("city_input").value;
+        console.log(city);
+        // document.querySelector("#city_name").innerText = city;
+        // axios.get(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=""&method=1`)
+        //     .then(function (response) {
+        //         // handle success
+        //         const data = response.data;
+        //         console.log(data);
+
+        //         // document.querySelector("#date").innerText = data.data.date.gregorian.date;
+
+        //         document.querySelector("#day").innerText = data.data.date.gregorian.weekday.en;
+        //         // document.querySelector("#date").innerHTML = data.data.date.hijri.date;
+        //         // document.querySelector("#date").innerHTML = data.data.date.hijri.day;
+
+
+        //         document.querySelector("#namaz1").innerText = `Fajr : ${data.data.timings.Fajr}`
+        //         document.querySelector("#namaz2").innerText = `Dhuhr : ${data.data.timings.Dhuhr}`;
+        //         document.querySelector("#namaz3").innerText = `Asr : ${data.data.timings.Asr}`;
+        //         document.querySelector("#namaz4").innerText = `Maghrib : ${data.data.timings.Maghrib}`;
+        //         document.querySelector("#namaz5").innerText = `Isha : ${data.data.timings.Isha}`;
+        //     })
     } else {   //1398332113 time stamp
         axios.get(`https://api.aladhan.com/v1/timings/${day}-${month}-${year}?latitude=${latitude}&longitude=${longitude}&method=1`)
             .then(function (response) {
@@ -72,7 +82,7 @@ let myFunction = () => {
                 document.querySelector("#namaz3").innerText = `Asr : ${data.data.timings.Asr}`;
                 document.querySelector("#namaz4").innerText = `Maghrib : ${data.data.timings.Maghrib}`;
                 document.querySelector("#namaz5").innerText = `Isha : ${data.data.timings.Isha}`;
-           
+
             })
     }
 }

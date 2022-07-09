@@ -42,7 +42,8 @@ body{
     padding: 15px;
 } */
 
-#city {
+#city_input {
+    display: none;
     padding: 15px;
     border-radius: 50px;
     font-size: 18px;
