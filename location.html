@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,14 +13,13 @@
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(showPosition, showError);
 		} else {
-			alert("Geolocation is not supported by this browser.");
+			alert("Access deined or Geolocation is not supported by this browser.");
 		}
 		function showPosition(position) {
 			let latitude = position.coords.latitude;
 			let longitude = position.coords.longitude;
 			console.log("latitude: " + latitude);
 			console.log("longitude: " + longitude);
-			// console.log(position);    //positon is an object (response object)
 		}
 		function showError(error) {
 			switch (error.code) {
