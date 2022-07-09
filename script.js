@@ -50,7 +50,7 @@ let myFunction = () => {
 
 
         city = document.getElementById("city_input").value;
-        manual_input(city)
+        //tryig to call function or create new function manual_input(city)
         console.log(city);
         // document.querySelector("#city_name").innerText = city;
 
