@@ -75,6 +75,7 @@ body{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    flex-direction: column;
     margin: 15px;
 }
 
