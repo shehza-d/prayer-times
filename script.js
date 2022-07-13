@@ -73,6 +73,8 @@ let myFunction = () => {
             //     })
         }
     } else {   //1398332113 time stamp
+        
+    console.log("auto_function running");
         axios.get(`https://api.aladhan.com/v1/timings/${day}-${month}-${year}?latitude=${latitude}&longitude=${longitude}&method=1`)
             .then(function (response) {
                 // handle success
@@ -89,25 +91,25 @@ let myFunction = () => {
     }
 }
 
-// let manual_input = () => {
- // axios.get(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=""&method=1`)
-        //     .then(function (response) {
-        //         // handle success
-        //         const data = response.data;
-        //         console.log(data);
+let manual_input = () => {
+ axios.get(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=""&method=1`)
+            .then(function (response) {
+                // handle success
+                const data = response.data;
+                console.log(data);
 
-        //         // document.querySelector("#date").innerText = data.data.date.gregorian.date;
-        //         document.querySelector("#day").innerText = data.data.date.gregorian.weekday.en;
-        //         // document.querySelector("#date").innerHTML = data.data.date.hijri.date;
-        //         // document.querySelector("#date").innerHTML = data.data.date.hijri.day;
+                // document.querySelector("#date").innerText = data.data.date.gregorian.date;
+                document.querySelector("#day").innerText = data.data.date.gregorian.weekday.en;
+                // document.querySelector("#date").innerHTML = data.data.date.hijri.date;
+                // document.querySelector("#date").innerHTML = data.data.date.hijri.day;
 
-        //         document.querySelector("#namaz1").innerText = `Fajr : ${data.data.timings.Fajr}`
-        //         document.querySelector("#namaz2").innerText = `Dhuhr : ${data.data.timings.Dhuhr}`;
-        //         document.querySelector("#namaz3").innerText = `Asr : ${data.data.timings.Asr}`;
-        //         document.querySelector("#namaz4").innerText = `Maghrib : ${data.data.timings.Maghrib}`;
-        //         document.querySelector("#namaz5").innerText = `Isha : ${data.data.timings.Isha}`;
-        //     })
-// }
+                document.querySelector("#namaz1").innerText = `Fajr : ${data.data.timings.Fajr}`
+                document.querySelector("#namaz2").innerText = `Dhuhr : ${data.data.timings.Dhuhr}`;
+                document.querySelector("#namaz3").innerText = `Asr : ${data.data.timings.Asr}`;
+                document.querySelector("#namaz4").innerText = `Maghrib : ${data.data.timings.Maghrib}`;
+                document.querySelector("#namaz5").innerText = `Isha : ${data.data.timings.Isha}`;
+            })
+}
 
     //maarig sir api       https://api.aladhan.com/v1/timingsByCity?city=${city}&country=""&method=8
     //zaid 617   api       https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=1
